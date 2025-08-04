@@ -1,0 +1,83 @@
+{
+    "Fabric": {
+        "type": "dict",
+        "schema": {
+            "type": {
+                "type": "string"
+            },
+            "Location": {
+                "type": "string"
+            }
+        }
+    },
+    "General Parameter": {
+        "type": "dict",
+        "schema": {
+            "BGP ASN": {
+                "type": "integer"
+            }
+        }
+    },
+    "Resources": {
+        "type": "dict",
+        "schema": {
+            "Underlay Routing Loopback IP Range": {
+                "type": "string"
+            },
+            "Underlay VTEP Loopback IP Range": {
+                "type": "string"
+            },
+            "Underlay Subnet IP Range": {
+                "type": "string"
+            }
+        }
+    },
+    "Manageability": {
+        "type": "dict",
+        "schema": {
+            "NTP Server IPs": {
+                "type": "string"
+            },
+            "Syslog Server IPs": {
+                "type": "string"
+            },
+            "AAA Freeform Config": {
+                "type": "dict",
+                "schema": {
+                    "Freeform": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    },
+    "Advanced": {
+        "type": "dict",
+        "schema": {
+            "Leaf Freeform Config": {
+                "type": "dict",
+                "schema": {
+                    "Freeform": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Spine Freeform Config": {
+                "type": "dict",
+                "schema": {
+                    "Freeform": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Intra-fabric Links Additional Config": {
+                "type": "dict",
+                "schema": {
+                    "Freeform": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}

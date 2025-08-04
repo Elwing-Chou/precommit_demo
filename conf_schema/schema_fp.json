@@ -1,0 +1,9 @@
+{
+    "network_configs/1_vxlan_evpn/inter-site_network/ISN-Test.yaml": "conf_schema/schema/network_configs/1_vxlan_evpn/inter-site_network/ISN-Test.json",
+    "network_configs/1_vxlan_evpn/inter-site_network/ISN_DCI.yaml": "conf_schema/schema/network_configs/1_vxlan_evpn/inter-site_network/ISN_DCI.json",
+    "network_configs/1_vxlan_evpn/fabric/Site3-test.yaml": "conf_schema/schema/network_configs/1_vxlan_evpn/fabric/Site3-test.json",
+    "network_configs/1_vxlan_evpn/fabric/Site2.yaml": "conf_schema/schema/network_configs/1_vxlan_evpn/fabric/Site2.json",
+    "network_configs/1_vxlan_evpn/fabric/Site1.yaml": "conf_schema/schema/network_configs/1_vxlan_evpn/fabric/Site1.json",
+    "network_configs/1_vxlan_evpn/multisite_deployment/MSD-Test1.yaml": "conf_schema/schema/network_configs/1_vxlan_evpn/multisite_deployment/MSD-Test1.json",
+    "network_configs/1_vxlan_evpn/multisite_deployment/MSD_DCI.yaml": "conf_schema/schema/network_configs/1_vxlan_evpn/multisite_deployment/MSD_DCI.json"
+}
