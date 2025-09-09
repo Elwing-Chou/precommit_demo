@@ -1,9 +1,9 @@
 import os
 import json
 import logging
-import precheck.constants as const
 import yaml
 import sys
+import constants as const
 from cerberus import Validator
 
 logging.basicConfig(
@@ -20,21 +20,22 @@ logging.basicConfig(
 
 if __name__ == "__main__":
     logging.info("YAML check started.")
-    logging.info(f"args: {sys.argv}")
+    # logging.info(f"args: {sys.argv}")
     yaml_list = sys.argv[1:]
 
     for yaml_fp in yaml_list:
-        logging.info(f"Check {yaml_fp}")
-        ref_fp = os.path.join(const.YAML_SCHEMA_SAVE_DIR, yaml_fp)
-        ref_fp = ref_fp.replace(".yaml", ".json")
-        with open(ref_fp, "r", encoding="utf-8") as f:
-            validate_schema = json.load(f)
-        v = Validator(validate_schema)
+        if not yaml_fp.startswith("."):
+            logging.info(f"Check {yaml_fp}")
+            ref_fp = os.path.join(const.YAML_SCHEMA_SAVE_DIR, yaml_fp)
+            ref_fp = ref_fp.replace(".yaml", ".json")
+            with open(ref_fp, "r", encoding="utf-8") as f:
+                validate_schema = json.load(f)
+            v = Validator(validate_schema)
 
-        with open(yaml_fp, "r", encoding="utf-8") as f:
-            data = yaml.safe_load(f)
-        result = v.validate(data)
-        if result is False:
-            logging.info(v.errors)
-            raise SystemExit(1)
+            with open(yaml_fp, "r", encoding="utf-8") as f:
+                data = yaml.safe_load(f)
+            result = v.validate(data)
+            if result is False:
+                logging.info(v.errors)
+                raise SystemExit(1)
     raise SystemExit(0)
