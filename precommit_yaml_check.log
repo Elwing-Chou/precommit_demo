@@ -1,3 +1,6 @@
 2025-09-10 02:22:39,593 - INFO - YAML check started.
 2025-09-10 02:22:39,593 - INFO - Check network_configs/1_vxlan_evpn/fabric/Site1.yaml
 2025-09-10 02:22:39,601 - INFO - {'Fabric': [{'Location': ['must be of string type']}]}
+2025-09-10 02:25:34,081 - INFO - YAML check started.
+2025-09-10 02:25:34,081 - INFO - Check network_configs/1_vxlan_evpn/fabric/Site3-test.yaml
+2025-09-10 02:25:34,090 - INFO - {'Fabric': [{'Location': ['must be of string type']}]}
