@@ -9,10 +9,14 @@ repos:
     -   id: check-yaml
     -   id: check-added-large-files
 
-repos:
-  - repo: local
+-   repo: https://github.com/PyCQA/flake8
+    rev: 6.0.0
     hooks:
-      - id: network_yaml_check
+    -   id: flake8
+
+-   repo: local
+    hooks:
+    -   id: network_yaml_check
         name: YAML Check For Network Config
         entry: python ./precheck/pre_commit_check.py
         language: system
