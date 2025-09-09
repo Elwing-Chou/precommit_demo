@@ -8,4 +8,4 @@ logging.basicConfig(level=logging.INFO,
 
 if __name__ == "__main__":
     logging.info("Test hook started.")
-    raise SystemExit(0)
+    raise SystemExit(1)
