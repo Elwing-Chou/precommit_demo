@@ -6,7 +6,11 @@ import yaml
 import sys
 from cerberus import Validator
 
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(
+    filename="precommit_yaml_check.log",
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s"
+)
 
 # def get_all_yaml(root=YAML_DIR):
 #     path_join = os.path.join("**", "*.yaml")
