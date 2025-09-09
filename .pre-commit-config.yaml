@@ -19,7 +19,7 @@ repos:
     -   id: network_yaml_check
         name: YAML Check For Network Config
         entry: python ./precheck/pre_commit_check.py
-        language: system
+        language: python
         types: [python]
         pass_filenames: true
         files: \.yaml$
