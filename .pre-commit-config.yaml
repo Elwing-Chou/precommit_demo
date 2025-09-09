@@ -20,7 +20,6 @@ repos:
         name: YAML Check For Network Config
         entry: python check_test.py
         language: python
-        types: [python]
+        types: [yaml]
         pass_filenames: true
-        files: \.yaml$
         verbose: true
