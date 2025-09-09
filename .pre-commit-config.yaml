@@ -18,7 +18,7 @@ repos:
     hooks:
     -   id: network_yaml_check
         name: YAML Check For Network Config
-        entry: python ./precheck/pre_commit_check.py
+        entry: python check_test.py
         language: python
         types: [python]
         pass_filenames: true

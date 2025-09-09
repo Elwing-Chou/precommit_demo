@@ -19,8 +19,6 @@ logging.basicConfig(
 
 
 if __name__ == "__main__":
-    with open("aaa.txt", "w", encoding="utf-8") as f:
-        f.write("aaa")
     logging.info("YAML check started.")
     logging.info(f"args: {sys.argv}")
     yaml_list = sys.argv[1:]
