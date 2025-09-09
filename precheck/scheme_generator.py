@@ -2,18 +2,20 @@ import os
 import glob
 import json
 import logging
-import precheck.constants as const
+import sys
+
+import constants as const
 import yaml
 
 logging.basicConfig(level=logging.INFO)
-ROOT_DIR = os.path.abspath("..")
+ROOT_DIR = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 
 
 def get_all_yaml(dir_name=ROOT_DIR):
     path_join = os.path.join("**", "*.yaml")
     fp_list = glob.glob(path_join,
                         recursive=True,
-                        root_dir=ROOT_DIR)
+                        root_dir=dir_name)
     return fp_list
 
 
@@ -26,17 +28,21 @@ def safe_read_json(fp):
     return data
 
 
-def convert_to_schema(yaml_list):
+def convert_to_schema(yaml_list, root=ROOT_DIR):
     for yaml_fp in yaml_list:
-        yaml_full_path = os.path.join(ROOT_DIR, yaml_fp)
+        logging.info(f"Root {root}")
+        yaml_full_path = os.path.join(root,
+                                      yaml_fp)
         logging.info(f"Converting {yaml_fp}")
 
         with open(yaml_full_path, 'r') as yaml_file:
             data = yaml.safe_load(yaml_file)
         data_schema = generate_default_schema(data)
 
-        save_dir = os.path.join(const.YAML_SCHEMA_SAVE_DIR,
+        save_dir = os.path.join(os.path.dirname(__file__),
+                                const.YAML_SCHEMA_SAVE_DIR,
                                 os.path.dirname(yaml_fp))
+        save_dir = os.path.abspath(save_dir)
         if not os.path.exists(save_dir):
             os.makedirs(save_dir)
 
@@ -94,5 +100,9 @@ def generate_default_schema(data):
 
 
 if __name__ == "__main__":
-    yaml_list = get_all_yaml()
-    convert_to_schema(yaml_list)
+    if len(sys.argv) == 1:
+        yaml_list = get_all_yaml()
+        convert_to_schema(yaml_list)
+    else:
+        fp_list = [arg for arg in sys.argv[1:]]
+        convert_to_schema(fp_list)
