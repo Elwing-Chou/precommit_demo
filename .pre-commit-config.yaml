@@ -22,5 +22,5 @@ repos:
         language: python
         types: [python]
         pass_filenames: true
-        files: \.py$
+        files: \.yaml$
         verbose: true
