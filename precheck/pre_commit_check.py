@@ -12,11 +12,6 @@ logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s"
 )
 
-# def get_all_yaml(root=YAML_DIR):
-#     path_join = os.path.join("**", "*.yaml")
-#     fp_list = glob.glob(path_join, recursive=True, root_dir=YAML_DIR)
-#     return fp_list
-
 
 if __name__ == "__main__":
     logging.info("YAML check started.")
