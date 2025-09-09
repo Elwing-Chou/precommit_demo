@@ -1,7 +1,7 @@
 ---
 Fabric:
   type: Data Center VXLAN EVPN
-  Location: San, Jose
+  Location: 333
 
 General Parameter:
   BGP ASN: 4240650100
