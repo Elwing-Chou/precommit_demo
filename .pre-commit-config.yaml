@@ -18,9 +18,10 @@ repos:
     hooks:
     -   id: network_yaml_check
         name: YAML Check For Network Config
-        entry: python ./precheck/pre_commit_check.py
+        entry: python ./precheck/commit_yaml_value_check.py
         language: python
         types: [yaml]
         pass_filenames: true
         additional_dependencies: ["pyyaml", "cerberus"]
         verbose: true
+        exclude: ^\.pre-commit-config\.yaml$

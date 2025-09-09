@@ -35,4 +35,5 @@ if __name__ == "__main__":
             if result is False:
                 logging.info(v.errors)
                 raise SystemExit(1)
+    logging.info("YAML check finished.")
     raise SystemExit(0)
