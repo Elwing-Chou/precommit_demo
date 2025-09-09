@@ -100,6 +100,7 @@ def generate_default_schema(data):
 
 
 if __name__ == "__main__":
+    # add white list for first time
     if len(sys.argv) == 1:
         yaml_list = get_all_yaml()
         convert_to_schema(yaml_list)
