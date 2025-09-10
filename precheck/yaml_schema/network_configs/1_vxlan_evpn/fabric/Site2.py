@@ -1,4 +1,4 @@
-{
+schema = {
     "Fabric": {
         "type": "dict",
         "schema": {
@@ -63,6 +63,14 @@
                 }
             },
             "Spine Freeform Config": {
+                "type": "dict",
+                "schema": {
+                    "Freeform": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Intra-fabric Links Additional Config": {
                 "type": "dict",
                 "schema": {
                     "Freeform": {

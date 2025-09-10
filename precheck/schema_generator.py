@@ -46,12 +46,14 @@ def convert_to_schema(yaml_list, root=ROOT_DIR):
         if not os.path.exists(save_dir):
             os.makedirs(save_dir)
 
-        json_fp = os.path.basename(yaml_fp).replace(".yaml", ".json")
+        json_fp = os.path.basename(yaml_fp).replace(".yaml", ".py")
         save_fp = os.path.join(save_dir, json_fp)
         logging.info(f"Writing schema to {save_fp}")
 
         with open(save_fp, "w", encoding="utf-8") as f:
+            f.write("schema = ")
             json.dump(data_schema, f, ensure_ascii=False, indent=4)
+            f.write("\n")
 
 
 def generate_default_schema(data):

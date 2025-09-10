@@ -1,4 +1,4 @@
-{
+schema = {
     "Fabric": {
         "type": "dict",
         "schema": {
