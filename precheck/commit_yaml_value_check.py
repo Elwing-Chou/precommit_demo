@@ -33,8 +33,6 @@ if __name__ == "__main__":
             module_name = (ref_fp.replace(".yaml", "")
                                  .replace("/", ".")
                                  .replace("\\", "."))
-            # with open(ref_fp, "r", encoding="utf-8") as f:
-            #     validate_schema = json.load(f)
 
             try:
                 dynamic_module = importlib.import_module(module_name)
