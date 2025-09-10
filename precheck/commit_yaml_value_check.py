@@ -1,8 +1,9 @@
 import os
-import json
+# import json
 import logging
 import yaml
 import sys
+import importlib
 import constants as const
 from cerberus import Validator
 
@@ -24,9 +25,16 @@ if __name__ == "__main__":
             ref_fp = os.path.join(os.path.dirname(__file__),
                                   const.YAML_SCHEMA_SAVE_DIR,
                                   yaml_fp)
-            ref_fp = ref_fp.replace(".yaml", ".json")
-            with open(ref_fp, "r", encoding="utf-8") as f:
-                validate_schema = json.load(f)
+            module_name = ref_fp.replace(".yaml", ".py")
+            # with open(ref_fp, "r", encoding="utf-8") as f:
+            #     validate_schema = json.load(f)
+
+            try:
+                dynamic_module = importlib.import_module(module_name)
+                validate_schema = dynamic_module.schema
+            except ImportError as e:
+                logging.info(f"Error importing module '{module_name}': {e}")
+
             v = Validator(validate_schema)
 
             with open(yaml_fp, "r", encoding="utf-8") as f:
