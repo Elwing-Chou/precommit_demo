@@ -46,7 +46,7 @@ if __name__ == "__main__":
                 data = yaml.safe_load(f)
             result = v.validate(data)
             if result is False:
-                logging.info(v.errors)
+                logging.error(v.errors)
                 raise SystemExit(1)
     logging.info("YAML check finished.")
     raise SystemExit(0)

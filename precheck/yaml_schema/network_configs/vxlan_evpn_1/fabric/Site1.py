@@ -42,7 +42,8 @@ schema = {
                 "type": "string"
             },
             "Syslog Server IPs": {
-                "type": "string"
+                "type": "string",
+                "regex": custom_regex.MULTIPLE_IP_COMMA_SEP
             },
             "AAA Freeform Config": {
                 "type": "dict",
