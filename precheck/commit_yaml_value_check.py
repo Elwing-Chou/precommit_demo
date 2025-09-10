@@ -22,10 +22,11 @@ if __name__ == "__main__":
     for yaml_fp in yaml_list:
         if not yaml_fp.startswith("."):
             logging.info(f"Check {yaml_fp}")
-            ref_fp = os.path.join(os.path.dirname(__file__),
-                                  const.YAML_SCHEMA_SAVE_DIR,
+            ref_fp = os.path.join(const.YAML_SCHEMA_SAVE_DIR,
                                   yaml_fp)
-            module_name = ref_fp.replace(".yaml", ".py")
+            module_name = (ref_fp.replace(".yaml", "")
+                                 .replace("/", ".")
+                                 .replace("\\", "."))
             # with open(ref_fp, "r", encoding="utf-8") as f:
             #     validate_schema = json.load(f)
 
