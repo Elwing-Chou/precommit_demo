@@ -20,7 +20,7 @@ Manageability:
 
 Advanced:
   Leaf Freeform Config: # Additional CLIs, added before interface configurations, for all Leafs as captured from Show Running Configuration
-    Freeform: Site1_FreeForm\Leaf Freeform Confi
+    Freeform: Site1_FreeForm\Leaf Freeform Config
   Spine Freeform Config:
     Freeform: Site1_FreeForm\Spine Freeform Config
   Intra-fabric Links Additional Config:
