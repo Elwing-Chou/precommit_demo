@@ -6,7 +6,7 @@ schema = {
                 "type": "string"
             },
             "Location": {
-                "type": "integer"
+                "type": "string"
             }
         }
     },

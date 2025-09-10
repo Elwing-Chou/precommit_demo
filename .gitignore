@@ -1,2 +1,3 @@
 precheck/__pycache__/constants.cpython-313.pyc
 *.log
+*.pyc
