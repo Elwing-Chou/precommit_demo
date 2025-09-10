@@ -1,4 +1,5 @@
 import precheck.pattern_regex as custom_regex
+import precheck.pattern_func as custom_func
 
 schema = {
     "Fabric": {
@@ -70,7 +71,8 @@ schema = {
                 "type": "dict",
                 "schema": {
                     "Freeform": {
-                        "type": "string"
+                        "type": "string",
+                        "check_with": custom_func.check_freeform_exists
                     }
                 }
             },
