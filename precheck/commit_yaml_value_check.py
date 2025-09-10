@@ -15,7 +15,14 @@ logging.basicConfig(
 
 if __name__ == "__main__":
     logging.info("YAML check started.")
-    # logging.info(f"args: {sys.argv}")
+
+    # add project path to sys.path
+    project_root = os.path.abspath(
+                       os.path.dirname(
+                           os.path.dirname(__file__)))
+    sys.path.append(project_root)
+
+    logging.info(f"sys path: {sys.path}")
     yaml_list = sys.argv[1:]
 
     for yaml_fp in yaml_list:
