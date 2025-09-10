@@ -7,7 +7,7 @@ import constants as const
 from cerberus import Validator
 
 logging.basicConfig(
-    # filename="precommit_yaml_check.log",
+    filename="precommit_yaml_check.log",
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s"
 )
