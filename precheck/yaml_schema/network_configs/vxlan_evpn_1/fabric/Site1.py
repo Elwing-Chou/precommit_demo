@@ -1,3 +1,5 @@
+import precheck.pattern_regex as custom_regex
+
 schema = {
     "Fabric": {
         "type": "dict",
@@ -22,7 +24,8 @@ schema = {
         "type": "dict",
         "schema": {
             "Underlay Routing Loopback IP Range": {
-                "type": "string"
+                "type": "string",
+                "regex": custom_regex.IP_MASK_REQUIRED
             },
             "Underlay VTEP Loopback IP Range": {
                 "type": "string"

@@ -13,7 +13,7 @@ repos:
     rev: 6.0.0
     hooks:
     -   id: flake8
-        exclude: ^(pattern_regex.py)
+        exclude: ^(precheck/pattern_regex.py)
 
 -   repo: local
     hooks:
